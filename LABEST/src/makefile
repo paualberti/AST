@@ -1,14 +1,15 @@
 flag=-Xlint:unchecked
+# test
+test:
+	javac Test.java #$(flag)
+	java Test
 # practica 1
-1c: build1c run1c
-1l: build1l run1l
-build1c:
-	clear
+1c:
 	javac practica1/CircularQ/TestCQ_ite.java #$(flag)
-run1c:
 	java practica1.CircularQ.TestCQ_ite
-build1l:
-	clear
+1l:
 	javac practica1/LinkedQ/TestLQ_ite.java #$(flag)
-run1l:
 	java practica1.LinkedQ.TestLQ_ite
+1p:
+	javac practica1/Protocol/Test.java #$(flag)
+	java practica1.Protocol.Test

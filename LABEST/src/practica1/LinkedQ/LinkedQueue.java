@@ -8,7 +8,7 @@ import util.Queue;
 public class LinkedQueue<E> implements Queue<E> {
 
   // Completar
-  private int numElem;
+  public int numElem;
   private Node first = new Node<>();
   private Node last = new Node();
 
@@ -74,7 +74,7 @@ public class LinkedQueue<E> implements Queue<E> {
     // throw new RuntimeException("//Completar...");
     Node node = first;
     String string = "numElem: " + size();
-    while (node != last.getNext()) {
+    while (node.getNext() != null) {
       node = node.getNext();
       string += "\n" + node.getValue();
     }
@@ -90,6 +90,7 @@ public class LinkedQueue<E> implements Queue<E> {
 
     // Completar...
     private Node current = first;
+    private Node previous = first;
     private boolean nextCall = false;
 
     @Override
@@ -105,6 +106,9 @@ public class LinkedQueue<E> implements Queue<E> {
         throw new NoSuchElementException();
       }
       E e = (E) current.getNext().getValue();
+      if (nextCall) {
+        previous = current;
+      }
       current = current.getNext();
       nextCall = true;
       return e;
@@ -117,13 +121,11 @@ public class LinkedQueue<E> implements Queue<E> {
         throw new IllegalStateException();
       }
       nextCall = false;
-      Node node = first;
-      while (node.getNext() != current) {
-        node = node.getNext();
-      }
-      node.setNext(current.getNext());
-      if (current.getNext() == null) {
-        last.setNext(node);
+
+      previous.setNext(current.getNext());
+
+      if (current.getNext() == last.getNext()) {
+        last.setNext(previous);
       }
       numElem--;
     }

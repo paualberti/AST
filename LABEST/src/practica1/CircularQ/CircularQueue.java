@@ -12,7 +12,7 @@ public class CircularQueue<E> implements Queue<E> {
   // Completar...
   private int head;
   private int tail;
-  private int numElem;
+  public int numElem;
 
   public CircularQueue(int N) {
     this.N = N;

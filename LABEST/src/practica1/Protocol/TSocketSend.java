@@ -12,6 +12,13 @@ public class TSocketSend extends TSocket_base {
 
   @Override
   public void sendData(byte[] data, int offset, int length) {
-    throw new RuntimeException("//Completar...");
+    //throw new RuntimeException("//Completar...");
+    TCPSegment tcpSegment = new TCPSegment();
+    byte[] bytes = new byte[length];
+    for (int i = 0; i < length; i++) {
+      bytes[i] = data[offset + i];
+    }
+    tcpSegment.setData(data, offset, length);
+    network.send(tcpSegment);
   }
 }

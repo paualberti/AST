@@ -15,12 +15,14 @@ public class SimNet_Queue implements SimNet {
 
   @Override
   public void send(TCPSegment s) {
-    throw new RuntimeException("//Completar...");
+    // throw new RuntimeException("//Completar...");
+    queue.put(s);
   }
 
   @Override
   public TCPSegment receive() {
-    throw new RuntimeException("//Completar...");
+    // throw new RuntimeException("//Completar...");
+    return queue.get();
   }
 
   @Override
