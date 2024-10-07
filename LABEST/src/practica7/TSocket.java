@@ -9,7 +9,7 @@ import util.TSocket_base;
  * Connection oriented Protocol Control Block.
  *
  * Each instance of TSocket maintains all the status of an endpoint.
- * 
+ *
  * Interface for application layer defines methods for passive/active opening and for closing the connection.
  * Interface lower layer defines methods for processing of received segments and for sending of segments.
  * We assume an ideal lower layer with no losses and no errors in packets.
@@ -41,7 +41,7 @@ import util.TSocket_base;
  |  WAIT   |------------------           -------------------|  WAIT   |
  +---------+          rcv FIN  \       /   CLOSE            +---------+
                       -------   |      |  -------
-                                |      |  snd FIN 
+                                |      |  snd FIN
                                 V      V
                               +----------+
                               |  CLOSED  |
@@ -119,7 +119,7 @@ public class TSocket extends TSocket_base {
           }
           break;
         }
-        
+
         case ESTABLISHED:
         case FIN_WAIT:
         case CLOSE_WAIT: {
@@ -127,8 +127,8 @@ public class TSocket extends TSocket_base {
             if (state == ESTABLISHED || state == FIN_WAIT) {
               // Here should go the segment's data processing.
             } else {
-              // This should not occur, since a FIN has been 
-              // received from the remote side. 
+              // This should not occur, since a FIN has been
+              // received from the remote side.
               // Ignore the data segment.
             }
           }
@@ -144,11 +144,11 @@ public class TSocket extends TSocket_base {
   }
 
   protected void printRcvSeg(TCPSegment rseg) {
-    log.printBLACK("    rcvd: " + rseg);
+    log.printPURPLE("    rcvd: " + rseg);
   }
 
   protected void printSndSeg(TCPSegment rseg) {
-    log.printBLACK("    sent: " + rseg);
+    log.printPURPLE("    sent: " + rseg);
   }
 
 }

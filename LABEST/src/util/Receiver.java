@@ -37,7 +37,7 @@ public class Receiver extends Thread {
           }
           n = (byte) (n + 1);
         }
-        log.printBLUE("\t\t\t\t\t\t\t\tReceiver: received " + r + " bytes");
+        log.printBLUE("\t\t\t\t\tReceiver: received " + r + " bytes");
         Thread.sleep(recvInterval);
       }
       log.printGREEN("\t\t\t\t\t\t\t\tReceiver: reception finished");

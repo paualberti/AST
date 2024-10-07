@@ -13,10 +13,13 @@ public class TSocketRecv extends TSocket_base {
   @Override
   public int receiveData(byte[] data, int offset, int length) {
     // throw new RuntimeException("//Completar...");
-    byte[] recieved = network.receive().getData();
-    for (int i = 0; i < recieved.length; i ++) {
+    TCPSegment tcpSegment = network.receive();
+    byte[] recieved = tcpSegment.getData();
+    for (int i = 0; i < recieved.length; i++) {
       data[i] = recieved[offset + i];
     }
+    tcpSegment.setPsh(true);
+    printRcvSeg(tcpSegment);
     return recieved.length;
   }
 }
