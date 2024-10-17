@@ -15,9 +15,16 @@ test:
 	javac practica1/Protocol/Test.java
 	java practica1.Protocol.Test
 
-2:
+# practica 2
+2cz:
 	javac practica2/P0CZ/TestSum.java
 	java practica2.P0CZ.TestSum
-2m:
+2czm:
 	javac practica2/P0CZ/Monitor/TestSumCZ.java
 	java practica2.P0CZ.Monitor.TestSumCZ
+2s:
+	javac practica2/P1Sync/TestID.java
+	java practica2.P1Sync.TestID
+2sm:
+	javac practica2/P1Sync/Monitor/TestIDSync.java
+	java practica2.P1Sync.Monitor.TestIDSync
