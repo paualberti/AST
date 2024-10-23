@@ -28,3 +28,6 @@ test:
 2sm:
 	javac practica2/P1Sync/Monitor/TestIDSync.java
 	java practica2.P1Sync.Monitor.TestIDSync
+2p:
+	javac practica2/Protocol/Test.java
+	java practica2.Protocol.Test
